@@ -1,3 +1,4 @@
+
 package com.springboot.demo.model;
 
 import lombok.Data;
@@ -11,3 +12,4 @@ public class EmployeeModel {
 	private String department;
 	
 }
+
