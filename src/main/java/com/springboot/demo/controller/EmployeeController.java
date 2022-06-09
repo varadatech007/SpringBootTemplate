@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.demo.model.EmployeeModel;
+import com.springboot.demo.model.StudentDetails;
 
 @RestController
 @RequestMapping("/v1/api")
@@ -20,5 +21,19 @@ public class EmployeeController {
 		em.setSalary(5000);
 		return em;
 	}
+	
+	@GetMapping("/StudentDetails")
+	public StudentDetails getStudent() {
+		StudentDetails sd = new StudentDetails();
+		sd.setStudentfirstName("Ananth");
+		sd.setStudentlastName("Adithya");
+		sd.setStudentIdName(2108);
+		sd.setStudentdepartment("Mech");
+		
+		return sd;
+	
+		
+	}
+	
 
 }
