@@ -9,5 +9,7 @@ public class EmployeeModel {
 	private String lastName;
 	private Integer salary;
 	private String department;
+	private Integer empId;
+	
 	
 }

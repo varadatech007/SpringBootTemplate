@@ -14,11 +14,24 @@ public class EmployeeController {
 	@GetMapping("/empdata")
 	public EmployeeModel getEmployee() {
 		EmployeeModel em = new EmployeeModel();
-		em.setFirstName("Varada");
-		em.setLastName("Ramana");
+		em.setFirstName("vindula");
+		em.setLastName("jagadish");
 		em.setDepartment("IT");
-		em.setSalary(5000);
+		em.setSalary(3000);
 		return em;
+	}
+	
+	@GetMapping("/emp2")
+	public EmployeeModel getEmployeeModel() {
+		EmployeeModel em2 = new EmployeeModel();
+		em2.setFirstName("Jagadeesh");
+		em2.setLastName("VVVV");
+		em2.setEmpId(22121);
+		em2.setDepartment("Mech");
+		em2.setSalary(1000000);
+		
+		return em2;
+		
 	}
 
 }
