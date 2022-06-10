@@ -1,33 +1,32 @@
 package com.springboot.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.demo.model.EmployeeModel;
+import com.springboot.demo.service.EmployeeService;
 
 @RestController
 @RequestMapping("/v1/api")
 public class EmployeeController {
-	
-	
+
+	@Autowired
+	private EmployeeService employeeService;
+
 	@GetMapping("/empdata")
-	public EmployeeModel getEmployee() {
-		EmployeeModel em = new EmployeeModel();
-		em.setFirstName("Varada");
-		em.setLastName("Ramana");
-		em.setDepartment("IT");
-		em.setSalary(5000);
-		return em;
-		
-		}
-	@GetMapping("/empdata1")
-	public EmployeeModel getEmployee1() {
-		EmployeeModel em1 = new EmployeeModel();
-		em1.setFirstName("Sateesh");
-		em1.setLastName("Patakamsetty");
-		em1.setDepartment("IT");
-		em1.setSalary(2000);
-		return em1;
+	public EmployeeModel getEmployeeModel() {
+		EmployeeModel emp = employeeService.getEmployee();
+		return emp;
 	}
+
+	@GetMapping("/empdata1")
+	public Integer geModel() {
+		EmployeeModel emp = employeeService.getEmployee();
+		Integer emp1 = emp.getSalary();
+		return emp1;
+
+	}
+
 }
