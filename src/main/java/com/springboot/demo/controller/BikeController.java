@@ -12,9 +12,11 @@ import com.springboot.demo.service.BikeService;
 public class BikeController {
 	
 	@Autowired
+	private BikeService bikeService;
+	
 	@GetMapping("/v2")
 	public BikeService getBikeService() {
-		BikeService bs = new BikeService();
+		BikeService bs = bikeService.getBikeModel();
 		return bs;
 		
 	}
