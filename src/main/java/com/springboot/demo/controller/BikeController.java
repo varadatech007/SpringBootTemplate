@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.demo.model.BikeModel;
 import com.springboot.demo.service.BikeService;
 
 @RestController
@@ -15,8 +16,10 @@ public class BikeController {
 	private BikeService bikeService;
 	
 	@GetMapping("/v2")
-	public BikeService getBikeService() {
-		BikeService bs = bikeService.getBikeModel();
+	public BikeModel getBike() {
+		bikeService.getBikeModel();
+	BikeModel bs = bikeService.getBikeModel();
+	
 		return bs;
 		
 	}
