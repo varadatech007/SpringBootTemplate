@@ -17,7 +17,6 @@ public class BikeController {
 	
 	@GetMapping("/v2")
 	public BikeModel getBike() {
-		bikeService.getBikeModel();
 	BikeModel bs = bikeService.getBikeModel();
 	
 		return bs;
