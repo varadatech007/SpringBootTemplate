@@ -17,4 +17,14 @@ public class CarService {
 		
 	}
 
+	public CarModel getCarModel2() {
+		CarModel crm = new CarModel();
+		crm.setCarName("Audi");
+		crm.setCarModel("a48");
+		crm.setCarType("disel");
+		crm.setCarSeries("Low Class");
+		crm.setCarLocation("Chennai");
+		return crm;
+		
+	}
 }
