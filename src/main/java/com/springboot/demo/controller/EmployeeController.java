@@ -1,11 +1,13 @@
 package com.springboot.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.demo.model.EmployeeModel;
 import com.springboot.demo.model.MobileModels;
+import com.springboot.demo.service.MobileModelService;
 
 @RestController
 @RequestMapping("/v1/api")
@@ -22,18 +24,17 @@ public class EmployeeController {
 		return em;
 	}
 	
-	@GetMapping("/mobdata")
-	public MobileModels getMobileModels() {
+	@Autowired
+	@GetMapping("/v2/api")
+	public MobileModelService getMobileModelService() {
 		
-		MobileModels mb = new MobileModels();
-		mb.setMobName("Redmi");
-		mb.setMobSeries("Redmi10s");
-		mb.setMobPrize(25000);
-		mb.setMobImei(98883899);
-		mb.setMobOsType("Android");
-		
+		MobileModelService mb = new MobileModelService();
 		return mb;
+		
+		
+	}
+	
 		
 	}
 
-}
+
