@@ -2,6 +2,8 @@ package com.springboot.demo.model;
 
 import lombok.Data;
 
+
+
 @Data
 public class EmployeeModel {
 	
