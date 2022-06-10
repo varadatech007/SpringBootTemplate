@@ -7,15 +7,13 @@ import com.springboot.demo.model.MobileModels;
 @Service
 public class MobileModelService {
 	
-public MobileModels getMobileModels() {
-		MobileModels mb = new MobileModels();
-		mb.setMobName("Redmi");
-		mb.setMobSeries("Redmi10s");
-		mb.setMobPrize(25000);
-		mb.setMobImei(98883899);
-		mb.setMobOsType("Android");
+	public MobileModels getMobileModels() {
+		MobileModels mm = new MobileModels();
+		mm.setMobName("mi");
+		mm.setMobPrize(342424);
+		mm.setMobSeries("minote10s");
+		return mm;
 		
-		return mb;
-
-}
+	}
+	
 }

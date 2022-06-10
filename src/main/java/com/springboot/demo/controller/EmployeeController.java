@@ -5,36 +5,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.demo.model.EmployeeModel;
 import com.springboot.demo.model.MobileModels;
 import com.springboot.demo.service.MobileModelService;
 
 @RestController
-@RequestMapping("/v1/api")
+@RequestMapping("/n1/kishi")
 public class EmployeeController {
 	
-	
-	@GetMapping("/empdata")
-	public EmployeeModel getEmployee() {
-		EmployeeModel em = new EmployeeModel();
-		em.setFirstName("Varada");
-		em.setLastName("Ramana");
-		em.setDepartment("IT");
-		em.setSalary(5000);
-		return em;
-	}
-	
 	@Autowired
-	@GetMapping("/v2/api")
-	public MobileModelService getMobileModelService() {
-		
-		MobileModelService mb = new MobileModelService();
-		return mb;
-		
+	private MobileModelService mobileModelService;
+	
+	@GetMapping("/v3/guru")
+	
+	public MobileModels getMobileModels() {
+		MobileModels mms = mobileModelService.getMobileModels();
+		mms.setMobName("mi");
+		return mms;
 		
 	}
 	
-		
+	
+	
 	}
 
 
