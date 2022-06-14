@@ -1,5 +1,7 @@
 package com.springboot.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,32 +19,42 @@ public class DemoController {
 	private EmployeeService employeeService;
 	@Autowired
 	private StudentService studentService;
-
+	
+	
+	
 	@GetMapping("/studata")
 	public StudentModel getModel() {
 		StudentModel stu = studentService.getModel();
 		return stu;
-
 	}
 
 	@GetMapping("/studata1")
-	public StudentModel getStudentModel() {
+	public String getStudentModel() {
 		StudentModel stu1 = studentService.getStudentModel();
-		return stu1;
-
+		String stu = stu1.getStuFirstName();
+		return stu;
 	}
 
 	@GetMapping("/empdata")
-	public EmployeeModel getEmployeeModel() {
+	public Integer getEmployeeModel() {
 		EmployeeModel emp = employeeService.getEmployee();
-		return emp;
-
+		Integer empName = emp.getSalary();
+		return empName;
 	}
 
 	@GetMapping("/empdata1")
 	public EmployeeModel getEmployeeModel1() {
 		EmployeeModel emp = employeeService.getEmployee1();
+		emp.getFirstName();
 		return emp;
 
 	}
+	@GetMapping("/listempdata")
+	public List<EmployeeModel> getEmployeeModels() {
+		List<EmployeeModel> list = employeeService.getEmployeeModels();
+		return list;
+	}
+	
+	
+	
 }
