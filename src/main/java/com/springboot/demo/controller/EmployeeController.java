@@ -28,5 +28,14 @@ public class EmployeeController {
 		List<EmployeeModel> employeeModels = employeeService.getEmployeeModels();
 		return employeeModels;
 	}
+	@GetMapping("/empdata2")
+	public EmployeeModel getEmployee1() {
+	EmployeeModel em1 = new EmployeeModel();
+	em1.setFirstName("masoom");
+	em1.setLastName("basha");
+	em1.setDepartment("cse");
+	em1.setSalary(8000);
+	return em1;
 
+	}
 }
