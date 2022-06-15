@@ -1,5 +1,7 @@
 package com.springboot.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +24,14 @@ public class BikeController {
 		return bs;
 		
 	}
+	@GetMapping("/sai")
+	public List<BikeModel>  getBikeModels(){
+		List<BikeModel> bikemodels = bikeService.getBikeModels();
+		return bikemodels;
+		
 	
 	
 
 	
+}
 }
