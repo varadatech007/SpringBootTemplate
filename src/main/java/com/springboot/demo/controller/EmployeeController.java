@@ -1,5 +1,7 @@
 package com.springboot.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,4 +31,10 @@ public class EmployeeController {
 
 	}
 
+	@GetMapping("/empdata2")
+	List<EmployeeModel> getEmployeeModels() {
+		List<EmployeeModel> list = employeeService.getEmployeeModels();
+		return list;
+
+	}
 }
