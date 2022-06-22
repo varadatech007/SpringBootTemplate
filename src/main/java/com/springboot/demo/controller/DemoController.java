@@ -1,5 +1,8 @@
 package com.springboot.demo.controller;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +18,12 @@ import com.springboot.demo.services.StudentService;
 @RestController
 @RequestMapping("/v1/api")
 public class DemoController {
+	private static final Integer ArrayList = null;
 	@Autowired
 	private EmployeeService employeeService;
 	@Autowired
 	private StudentService studentService;
-	
-	
-	
+
 	@GetMapping("/studata")
 	public StudentModel getModel() {
 		StudentModel stu = studentService.getModel();
@@ -49,12 +51,33 @@ public class DemoController {
 		return emp;
 
 	}
+
 	@GetMapping("/listempdata")
 	public List<EmployeeModel> getEmployeeModels() {
 		List<EmployeeModel> list = employeeService.getEmployeeModels();
-		return list;
+		List<EmployeeModel> lst = new ArrayList<EmployeeModel>();
+		EmployeeModel emp = new EmployeeModel();
+		for (EmployeeModel lst1 : list) {
+			emp.setFirstName(lst1.getFirstName());
+			lst.add(emp);
+			emp = new EmployeeModel();
+		}
+
+		return lst;
 	}
-	
-	
-	
+
+	@GetMapping("/linkedlistdata")
+	public List<EmployeeModel> getEmployeeModels1() {
+		List<EmployeeModel> list = employeeService.getEmployeeModels1();
+		List<EmployeeModel> lst = new LinkedList<EmployeeModel>();
+		EmployeeModel emp = new EmployeeModel();
+		for(EmployeeModel lis: list) {
+			emp.setLastName(lis.getLastName());
+			lst.add(emp);
+			emp = new EmployeeModel();
+		}
+		return lst;
+
+	}
+
 }

@@ -1,6 +1,8 @@
 package com.springboot.demo.services;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +52,7 @@ public class EmployeeService {
 		em4.setFirstName("kiran");
 		em4.setLastName("kumar");
 		em4.setDepartment("SE");
-		em4.setSalary(16000);
+		em4.setSalary(20000);
 		list.add(em4);
 
 		EmployeeModel em5 = new EmployeeModel();
@@ -59,6 +61,30 @@ public class EmployeeService {
 		em5.setDepartment("LE");
 		em5.setSalary(28000);
 		list.add(em5);
+		return list;
+
+	}
+
+	public List<EmployeeModel> getEmployeeModels1() {
+
+		List<EmployeeModel> list = new LinkedList<EmployeeModel>();
+		EmployeeModel emp = new EmployeeModel();
+		emp.setFirstName("Masoom");	
+		emp.setLastName("Masoom");
+		emp.setDepartment("SE");
+		emp.setSalary(500000);
+		
+		String itr = emp.getFirstName();
+		
+		list.add(emp);
+		
+		EmployeeModel emp1 = new EmployeeModel();
+		emp1.setFirstName("Masoom");
+		emp1.setLastName("Masoom");
+		emp1.setDepartment("SE");
+		emp1.setSalary(500000);
+		list.add(emp1);
+		
 		return list;
 
 	}
